@@ -1,26 +1,10 @@
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias vi='vim'
-alias la='ls -la'
-alias ll='ls -l'
-alias reload!='source ~/.bashrc'
 
-# ruby on rails
-alias rc='rails c'
-alias rs='rails s'
-alias rvmi='rvm info'
-alias rvmir='rvm info ruby'
-alias rvmu='rvm use'
+if [ -f ~/.bash_alias ]; then
+    . ~/.bash_alias
+fi
 
-# heroku
-alias h='heroku'
-alias hl='heroku list'
-alias hi='heroku info'
-alias ho='heroku open'
-
-function parse_git_branch_and_add_brackets {
+function parse_git_branch_and_add_brackets 
+{
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
 

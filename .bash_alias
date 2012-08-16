@@ -1,0 +1,21 @@
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias vi='vim'
+alias la='ls -la'
+alias ll='ls -l'
+alias reload!='source ~/.bashrc'
+ 
+#ruby on rails
+alias rc='rails c'
+alias rs='rails s'
+alias rvmi='rvm info'
+alias rvmir='rvm info ruby'
+alias rvmu='rvm use'
+ 
+# heroku
+alias h='heroku'
+alias hl='heroku list'
+alias hi='heroku info'
+alias ho='heroku open'
