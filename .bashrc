@@ -4,13 +4,13 @@ if [ -f ~/.bash_alias ]; then
 fi
 
 parse_git_branch () {
-    git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (git::\1)#'
+    git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (\1)#'
 }
 parse_hg_branch() {
-    hg branch 2>/dev/null | sed 's#\(.*\)# (hg::\1)#'
+    hg branch 2>/dev/null | sed 's#\(.*\)# (\1)#'
 }
 parse_svn_branch() {
-    parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " (svn::"$1")" }'
+    parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print "("$1")" }'
 }
 parse_svn_url() {
     if [ -e .svn ] ; then
@@ -25,7 +25,7 @@ parse_svn_repository_root() {
 parse_cvs_branch() {
     if [ -e CVS ] ; then
         #cat CVS/TAG | cut -c 2- 2>/dev/null | sed '#\(.*\)# (cvs::\1)#'
-        BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- ` ; if [ "$BRANCH" != "" ] ; then echo " (cvs::$BRANCH)" ; fi
+        BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- ` ; if [ "$BRANCH" != "" ] ; then echo "(cvs::$BRANCH)" ; fi
     fi
 }
  
@@ -48,7 +48,16 @@ function jornadas
     echo -e "git whatchanged --since=$DATE_INI --before=$DATE_FIM --author=$GIT_USER"
 }
 
-export PS1="\[\e[0;1m\][\[\e[33;1m\]\u\[\e[0;1m\]@\h\$(get_branch_information):\[\e[32;1m\]\w\[\e[0;1m\]]$\[\e[0m\] "
+WHITE="\[\e[0m\]"
+WHITE_1="\[\e[0;1m\]"
+YELLOW="\[\e[33;1m\]"
+GREEN="\[\e[32;1m\]"
+BLACK="\[\033[0;38m\]"
+RED="\[\033[0;31m\]"
+RED_BOLD="\[\033[01;31m\]"
+BLUE="\[\033[01;34m\]"
+
+export PS1="$WHITE_1[$YELLOW\u$WHITE_1@\h$RED_BOLD\$(get_branch_information)$WHITE_1:$GREEN\w$WHITE_1]\$$WHITE "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
