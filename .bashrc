@@ -10,7 +10,7 @@ function parse_git_branch
 
 function parse_svn_branch
 {
-   parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " ("$1")" }'
+   parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print "["$1"]" }'
 }
 
 function parse_svn_url
