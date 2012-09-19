@@ -57,7 +57,7 @@ RED="\[\033[0;31m\]"
 RED_BOLD="\[\033[01;31m\]"
 BLUE="\[\033[01;34m\]"
 
-export PS1="$WHITE_1[$YELLOW\u$WHITE_1@\h$RED_BOLD\$(get_branch_information)$WHITE_1:$GREEN\w$WHITE_1]\$$WHITE "
+export PS1="$WHITE_1[$YELLOW\u$WHITE_1@\h$BLUE\$(get_branch_information)$WHITE_1:$GREEN\w$WHITE_1]\$$WHITE "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
