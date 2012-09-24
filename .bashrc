@@ -4,7 +4,8 @@ if [ -f ~/.bash_alias ]; then
 fi
 
 parse_git_branch () {
-    git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (\1)#'
+    #git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (\1)#'
+    git status 2> /dev/null | head -n 1 | sed 's/\# On Branch//gi' | awk '{print "("$1")" }'
 }
 parse_hg_branch() {
     hg branch 2>/dev/null | sed 's#\(.*\)# (\1)#'
