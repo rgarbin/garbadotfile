@@ -1,0 +1,46 @@
+[user]
+	email = rafaelgarbin@cwi.com.br
+	name = Rafael Garbin
+[dude]
+	interval = 30
+	icon = /home/rafaelgarbin/.git-dude/github_32.png
+	notify-command = echo -e \"$TITLE\\n\\n\\n$DESCRIPTION\" | espeak --stdin -k20 -ven+12
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    editor = vim
+[alias]
+    st = status
+    ci = commit -m
+    br = branch
+    df = diff
+    lg = log -pgit ps
+    co = checkout
+    tree = log --graph --pretty=oneline --decorate
+    pom = push origin master
+    ps = push
+    pl = pull
+    amend = commit --amend -C HEAD
+    ll   = log --pretty=oneline --decorate --abbrev-commit --max-count=15
+    rn = log -M
