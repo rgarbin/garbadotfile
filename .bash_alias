@@ -13,6 +13,9 @@ alias rs='rails s'
 alias rvmi='rvm info'
 alias rvmir='rvm info ruby'
 alias rvmu='rvm use'
+
+# python
+alias pyclean='find . -type f -name "*.py[co]" -exec rm -f \{\} \;'
  
 # heroku
 alias h='heroku'
