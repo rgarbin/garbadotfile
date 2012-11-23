@@ -22,3 +22,6 @@ alias h='heroku'
 alias hl='heroku list'
 alias hi='heroku info'
 alias ho='heroku open'
+
+# python
+alias server='python -m SimpleHTTPServer 8000'
