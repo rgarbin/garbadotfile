@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+Comment=Eclipse
+Exec=/home/rafaelgarbin/Applications/eclipse/eclipse
+Categories=Application;Development;Java;IDE
+Icon=/home/rafaelgarbin/Applications/eclipse/icon.xpm
+Version=1.0
+Type=Application
+Terminal=0
