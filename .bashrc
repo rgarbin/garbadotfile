@@ -1,4 +1,3 @@
-
 if [ -f ~/.bash_alias ]; then
     . ~/.bash_alias
 fi
@@ -63,3 +62,9 @@ export PS1="$WHITE_1[$YELLOW\u$WHITE_1@\h$BLUE\$(get_branch_information)$WHITE_1
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
 source ~/.rvm/scripts/rvm
+
+# Add virtualenvwrapper to PATH for scpripting
+export PIP_RESPECT_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=true
+export WORKON_HOME=~/.virtualenv
+source /usr/local/bin/virtualenvwrapper.sh 
