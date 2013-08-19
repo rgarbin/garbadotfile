@@ -68,3 +68,9 @@ export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUALENV=true
 export WORKON_HOME=~/.virtualenv
 source /usr/local/bin/virtualenvwrapper.sh 
+
+#grep -v with color
+export GREP_OPTIONS="--color=always"
+
+#remove svn references of search
+alias grep="grep --exclude='*.svn-*' --exclude='entries'"
